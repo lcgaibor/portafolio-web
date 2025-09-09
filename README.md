@@ -15,3 +15,6 @@ Este es mi portafolio web personal, diseñado para mostrar mi experiencia, habil
 
 ## Cómo usar
 Abre `index.html` en tu navegador para ver el portafolio.
+
+## Verificación del perfil
+https://portafolio-lesly.netlify.app/
