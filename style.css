@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos personalizados para las tarjetas */
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.dark .card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+.card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Styles */
+#navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.8s ease-out;
+}
+
+.dark #navbar {
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}
+
+.dark .navbar-sticky {
+    background: rgba(17, 24, 39, 0.98);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(55, 65, 81, 0.5);
+    box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+/* Ensure body and sections have proper top margin to account for fixed navbar */
+body {
+    padding-top: 0;
+    transition: padding-top 0.3s ease;
+}
+
+body.navbar-sticky-active {
+    padding-top: 5rem; /* Height of navbar: h-16 (4rem) + some margin */
+}
+
+section {
+    padding-top: 5rem;
+}
+
+/* Hero section needs extra padding since it starts at the top */
+#hero {
+    padding-top: 5rem;
+}
+
+/* Animación de bounce para la flecha */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Burbujas flotantes */
+.bubbles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(59, 130, 246, 0.15);
+    border-radius: 50%;
+    animation: rise 15s infinite ease-in;
+}
+
+.dark .bubble {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 110%;
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Carrusel de certificados */
+.certificates-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.certificates-track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+    width: calc(336px * 5); /* 5 cards * (320px + 16px gap) */
+}
+
+.certificate-card {
+    flex-shrink: 0;
+    width: 320px;
+    height: 400px;
+}
+
+/* Responsive: ajustar ancho del contenedor según pantalla */
+@media (max-width: 768px) {
+    .certificates-carousel {
+        width: 336px; /* Mostrar 1 tarjeta en móviles */
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .certificates-carousel {
+        width: calc(336px * 2); /* Mostrar 2 tarjetas en tablets */
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .certificates-carousel {
+        width: calc(336px * 3); /* Mostrar 3 tarjetas en desktop */
+        margin: 0 auto;
+    }
+}
+
+/* Modal para visualizar certificados */
+.certificate-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.certificate-modal.active {
+    display: flex;
+}
+
+.certificate-modal-content {
+    position: relative;
+    max-width: 1200px;
+    max-height: 90vh;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.dark .certificate-modal-content {
+    background: #1f2937;
+}
+
+.certificate-modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.certificate-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.dark .certificate-modal-close {
+    background: rgba(31, 41, 55, 0.9);
+}
+
+.certificate-modal-close:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.dark .certificate-modal-close:hover {
+    background: #1f2937;
+}
+
+.certificate-modal-close i {
+    color: #111827;
+    font-size: 20px;
+}
+
+.dark .certificate-modal-close i {
+    color: #f9fafb;
+}
+
+.certificate-view-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(59, 130, 246, 0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.certificate-view-btn:hover {
+    background: rgba(59, 130, 246, 1);
+    transform: translateY(-2px);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #e5e7eb;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.dark .theme-toggle {
+    background-color: #374151;
+}
+
+.theme-toggle-circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: rotate(0deg);
+}
+
+.dark .theme-toggle-circle {
+    transform: translateX(30px) rotate(180deg);
+    background-color: #1f2937;
+}
+
+.theme-toggle-circle i {
+    font-size: 12px;
+    color: #f59e0b;
+}
+
+.dark .theme-toggle-circle i.fa-moon {
+    color: #fbbf24;
+}
+
+.theme-toggle-circle i.fa-sun {
+    color: #f59e0b;
+}
+
+/* Posición relativa para secciones con burbujas */
+.bubbles-section {
+    position: relative;
+}
+
+/* Animaciones adicionales */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+}
+
+.scale-in {
+    animation: scaleIn 0.8s ease-out;
+}
+
+/* Efecto hover para tarjetas */
+.card-hover-effect {
+    transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-8px);
+}
+
+/* Efecto de pulso para botones */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.btn-pulse:hover {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animaciones para el menú móvil */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Flechas del carrusel */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .carousel-arrow {
+    background: rgba(31, 41, 55, 0.95);
+    border-color: #374151;
+}
+
+.carousel-arrow:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.dark .carousel-arrow:hover {
+    background: #1f2937;
+}
+
+.carousel-arrow i {
+    color: #3b82f6;
+    font-size: 20px;
+}
+
+.carousel-arrow-left {
+    left: -24px;
+}
+
+.carousel-arrow-right {
+    right: -24px;
+}
+
+/* Responsive - Flechas dentro en pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel-arrow-left {
+        left: 10px;
+    }
+    
+    .carousel-arrow-right {
+        right: 10px;
+    }
+}
+
+

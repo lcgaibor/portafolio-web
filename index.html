@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesly Gaibor - Ingeniera en TI</title>
+    <link rel="icon" href="img/icon.png" type="image/png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#3b82f6',
+                        'accent-foreground': '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="#"
+                    class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white hover:text-accent transition-colors">
+                    Lesly Gaibor
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Sobre
+                        Mí</a>
+                    <a href="#experience"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Experiencia</a>
+                    <a href="#projects"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Proyectos</a>
+                    <a href="#certificates"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Certificados</a>
+                    <a href="#contact"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Contacto</a>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="theme-toggle">
+                        <div class="theme-toggle-circle">
+                            <i class="fas fa-sun text-yellow-500 text-xs" id="light-icon"></i>
+                            <i class="fas fa-moon text-gray-700 text-xs hidden" id="dark-icon"></i>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center gap-4 md:hidden">
+                    <!-- Mobile Theme Toggle -->
+                    <button id="theme-toggle-mobile" class="theme-toggle">
+                        <div class="theme-toggle-circle">
+                            <i class="fas fa-sun text-yellow-500 text-xs" id="light-icon-mobile"></i>
+                            <i class="fas fa-moon text-gray-700 text-xs hidden" id="dark-icon-mobile"></i>
+                        </div>
+                    </button>
+
+                    <button id="mobile-menu-btn"
+                        class="p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex flex-col gap-4">
+                    <a href="#about"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Sobre
+                        Mí</a>
+                    <a href="#experience"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Experiencia</a>
+                    <a href="#projects"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Proyectos</a>
+                    <a href="#certificates"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Certificados</a>
+                    <a href="#contact"
+                        class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Burbujas -->
+    <section
+        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 bubbles-section overflow-hidden">
+        <!-- Burbujas de fondo -->
+        <div class="bubbles-container" id="hero-bubbles"></div>
+
+        <div class="container mx-auto max-w-5xl relative z-10">
+            <div class="space-y-6 sm:space-y-8 text-center">
+                <!-- Foto de perfil -->
+                <div class="flex justify-center mb-6">
+                    <img src="img/img-foto-lesly.png" alt="Lesly Gaibor"
+                        class="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-accent/20 object-cover shadow-lg">
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+                        Hola, soy <span class="text-accent">Lesly Gaibor</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300">
+                        Ingeniera en Tecnologías de la Información
+                    </p>
+                </div>
+
+                <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    Especializada en desarrollo front-end y tecnologías web modernas.
+                    Apasionada por crear experiencias digitales innovadoras y funcionales.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#projects"
+                        class="inline-flex items-center justify-center px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent/90 transition-colors">
+                        Ver Mi Trabajo
+                    </a>
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+                        Contactar
+                    </a>
+                </div>
+
+                <div class="pt-12 animate-bounce">
+                    <a href="#about"
+                        class="inline-block text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <i class="fas fa-arrow-down text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section con Burbujas -->
+    <section id="about" class="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bubbles-section overflow-hidden">
+        <!-- Burbujas de fondo -->
+        <div class="bubbles-container" id="about-bubbles"></div>
+
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <div class="space-y-12 sm:space-y-16 fade-in">
+                <div class="space-y-4 text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Sobre Mí</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        Ingeniera en Tecnologías de la Información recién egresada de la ESPE (sede Santo Domingo) con
+                        especial interés en desarrollo front-end y tecnologías web. Mi experiencia incluye desarrollo de
+                        sistemas web, soporte técnico en redes, y manejo de diversas tecnologías tanto en front-end como
+                        en back-end.
+                    </p>
+                    <div class="pt-4">
+                        <a href="img/cv_GaiborLesly.pdf" download="cv_GaiborLesly.pdf"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent/90 transition-colors">
+                            <i class="fas fa-download"></i>
+                            Descargar CV
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    <div class="card p-6 sm:p-8 card-hover-effect">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i class="fas fa-code text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Desarrollo</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Construcción de aplicaciones web escalables con frameworks modernos y mejores prácticas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 sm:p-8 card-hover-effect">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i class="fas fa-palette text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Diseño</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Creación de interfaces intuitivas con enfoque en experiencia de usuario.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 sm:p-8 card-hover-effect">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i class="fas fa-rocket text-2xl text-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Innovación</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Siempre aprendiendo nuevas tecnologías y enfrentando desafíos profesionales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Tecnologías con las que Trabajo</h3>
+                    <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-react-original text-lg"></i> React
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-angularjs-plain text-lg"></i> Angular
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-nodejs-plain text-lg"></i> Node.js
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-python-plain text-lg"></i> Python
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-php-plain text-lg"></i> PHP
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-mysql-plain text-lg"></i> MySQL
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-postgresql-plain text-lg"></i> PostgreSQL
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium flex items-center gap-2">
+                            <i class="devicon-docker-plain text-lg"></i> Docker
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto max-w-5xl">
+            <div class="space-y-12 sm:space-y-16 fade-in">
+                <div class="space-y-4 text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Experiencia</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        Mi trayectoria profesional y el impacto que he generado
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Experiencia 1 - CENAPE (Nueva) -->
+                    <div class="card p-6 sm:p-8">
+                        <div class="space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                <div class="space-y-1">
+                                    <h3 class="text-xl sm:text-2xl font-semibold">Gestora Documental</h3>
+                                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span class="font-medium">CENAPE</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                    <i class="fas fa-calendar"></i>
+                                    <span class="text-sm">2025 - Presente</span>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Gestión, actualización y control documental de información institucional de
+                                universidades
+                                y programas académicos nacionales. Diseño y mejora de la experiencia de usuario (UX/UI)
+                                en la interfaz del sistema, optimizando la navegación y presentación de contenidos
+                                educativos.
+                            </p>
+
+                            <div class="pt-2">
+                                <h4 class="text-sm font-semibold mb-2">Logros Clave:</h4>
+                                <ul class="space-y-1">
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Control documental de información institucional universitaria</span>
+                                    </li>
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Diseño y optimización de UX/UI del sistema institucional</span>
+                                    </li>
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Mejora en la navegación y presentación de contenidos educativos</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiencia 2 -->
+                    <div class="card p-6 sm:p-8">
+                        <div class="space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                <div class="space-y-1">
+                                    <h3 class="text-xl sm:text-2xl font-semibold">Prácticas Pre-Profesionales</h3>
+                                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span class="font-medium">ÁREA NARANJA / WE MAKERS</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                    <i class="fas fa-calendar"></i>
+                                    <span class="text-sm">2024</span>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Desarrollo de un sistema de asistencia y gestión de horarios para profesores y
+                                estudiantes, utilizando tecnologías web para cursos vacacionales de robótica.
+                            </p>
+
+                            <div class="pt-2">
+                                <h4 class="text-sm font-semibold mb-2">Logros Clave:</h4>
+                                <ul class="space-y-1">
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Implementé sistema completo de gestión de horarios</span>
+                                    </li>
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Mejoré eficiencia en control de asistencias</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiencia 3 -->
+                    <div class="card p-6 sm:p-8">
+                        <div class="space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                <div class="space-y-1">
+                                    <h3 class="text-xl sm:text-2xl font-semibold">Soporte Técnico</h3>
+                                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span class="font-medium">POWERNET SD</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                    <i class="fas fa-calendar"></i>
+                                    <span class="text-sm">2024</span>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Soporte técnico en redes, instalación y configuración de routers, solución de problemas
+                                de conectividad.
+                            </p>
+
+                            <div class="pt-2">
+                                <h4 class="text-sm font-semibold mb-2">Logros Clave:</h4>
+                                <ul class="space-y-1">
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Resolví múltiples problemas de conectividad de red</span>
+                                    </li>
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Configuré routers y equipos de red</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiencia 4 -->
+                    <div class="card p-6 sm:p-8">
+                        <div class="space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                                <div class="space-y-1">
+                                    <h3 class="text-xl sm:text-2xl font-semibold">Cajera Multifuncional</h3>
+                                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span class="font-medium">VIEW</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                                    <i class="fas fa-calendar"></i>
+                                    <span class="text-sm">2022 - 2025</span>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Atención al cliente en temporadas vacacionales, manejo de caja y facturación,
+                                apoyo en organización de ventas y servicio postventa.
+                            </p>
+
+                            <div class="pt-2">
+                                <h4 class="text-sm font-semibold mb-2">Logros Clave:</h4>
+                                <ul class="space-y-1">
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Excelente servicio al cliente durante 12 meses acumulados</span>
+                                    </li>
+                                    <li class="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                        <span class="text-accent mt-1">•</span>
+                                        <span>Manejo eficiente de caja y facturación</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <div class="space-y-12 sm:space-y-16 fade-in">
+                <div class="space-y-4 text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Proyectos Destacados</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        Una selección de mi trabajo reciente y proyectos personales
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Proyecto 1 -->
+                    <div class="card overflow-hidden group">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                            <img src="img/project2.png" alt="Sistema de Realidad Aumentada"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl sm:text-2xl font-semibold">Sistema de Realidad Aumentada</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Diseño de un sistema de RA basado en cubos 3D con relieves como marcadores,
+                                para visualizar la tabla periódica y moléculas simples.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Unity</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">C#</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Vuforia</span>
+                            </div>
+
+                            <div class="flex gap-3 pt-2">
+                                <a href="https://github.com/ElizaMonik/Modelos-3D-tablaperiodica-blender.git"
+                                    target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                    Ver Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="card overflow-hidden group">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                            <img src="img/project1.png" alt="Aplicación Móvil SE Survey"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl sm:text-2xl font-semibold">Aplicación Móvil SE Survey</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Aplicación móvil para realizar encuestas de seguridad ciudadana en Luz de América.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Java</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Android
+                                    Studio</span>
+                            </div>
+
+                            <div class="flex gap-3 pt-2">
+                                <a href="https://github.com/lcgaibor/GecSurvey.git" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                    Ver App
+                                </a>
+                                <a href="https://github.com/lcgaibor/GecSurvey_srv.git" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+                                    <i class="fab fa-github"></i>
+                                    Backend
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto Demo 1 -->
+                    <div class="card overflow-hidden group">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                            <img src="img/project-demo1.png" alt="Sistema de Gestión Académica"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl sm:text-2xl font-semibold">Sistema de Gestión Académica</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Plataforma web para gestión de cursos, estudiantes y calificaciones con dashboard interactivo.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">React</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Node.js</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">MongoDB</span>
+                            </div>
+
+                            <div class="flex gap-3 pt-2">
+                                <span class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg">
+                                    <i class="fas fa-clock"></i>
+                                    En proceso
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto Demo 2 -->
+                    <div class="card overflow-hidden group">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                            <img src="img/project-demo2.png" alt="App de Seguimiento de Tareas"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl sm:text-2xl font-semibold">App de Seguimiento de Tareas</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Aplicación móvil multiplataforma para gestión de proyectos personales con sincronización en la nube.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">React Native</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Firebase</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">TypeScript</span>
+                            </div>
+
+                            <div class="flex gap-3 pt-2">
+                                <span class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg">
+                                    <i class="fas fa-clock"></i>
+                                    En proceso
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section - Nuevo Carrusel -->
+    <section id="certificates" class="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto max-w-6xl">
+            <div class="space-y-12 sm:space-y-16 fade-in">
+                <div class="space-y-4 text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Certificaciones</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        Certificaciones profesionales que validan mi experiencia y compromiso con el aprendizaje continuo
+                    </p>
+                </div>
+
+                <!-- Carrusel de Certificados -->
+                <div class="relative">
+                    <div class="certificates-carousel overflow-hidden">
+                        <div class="certificates-track flex transition-transform duration-300 ease-in-out" id="certificates-track">
+                            <!-- Certificado 1 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_contable.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_contable.jpg" alt="Auxiliar Contable"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-calculator text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Auxiliar Contable</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Certificación en contabilidad básica con 43 horas de formación especializada.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Septiembre 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 2 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_vsc.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_vsc.jpg" alt="VS Code y GitHub Copilot"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fab fa-github text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">VS Code y GitHub Copilot</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Herramientas de desarrollo modernas con Código Facilito. 3h 21m de formación.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Septiembre 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 3 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_docker.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_docker.jpg" alt="Curso Profesional de Docker"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fab fa-docker text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Curso Profesional de Docker</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Contenedores y despliegue con Código Facilito. 3h 31m de formación especializada.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Septiembre 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 4 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_espe.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_espe.jpg" alt="Congreso Internacional CIT 2025"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-award text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Congreso Internacional CIT 2025</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Presentación de póster sobre Realidad Aumentada en la Universidad ESPE.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 5 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_business.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_business.jpg" alt="Business Analysis & Process Management"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-briefcase text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Business Analysis & Process Management</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Análisis de negocios y gestión de procesos en Coursera.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 6 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_sql.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_sql.jpg" alt="Fundamentos de SQL"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-database text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Fundamentos de SQL</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Curso intensivo de 1h 35m sobre consultas básicas, manejo de bases de datos y creación de estructuras SQL.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Septiembre 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 7 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_ia.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_ia.jpg" alt="Taller: IA para Docentes – GAD Provincial"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-brain text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Taller: IA para Docentes – GAD Provincial</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Taller de 10 horas sobre uso de inteligencia artificial para optimización académica y administrativa.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Septiembre 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 8 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_seminario.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_seminario.jpg" alt="Seminario: Innovación, Investigación y Vinculación – GAD Provincial"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-lightbulb text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Seminario: Innovación, Investigación y Vinculación – GAD Provincial</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Seminario presencial de 8 horas sobre innovación y desarrollo sostenible.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Noviembre 2023
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 9 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_sql.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_sql.jpg" alt="Fundamentos de SQL"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-database text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Fundamentos de SQL</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Curso intensivo de 1h 35m sobre consultas básicas, manejo de bases de datos y creación de estructuras SQL.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Septiembre de 2025
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificado 10 -->
+                            <div class="certificate-card">
+                                <div class="card overflow-hidden cursor-pointer group h-full" onclick="openCertificateModal('img/certificado_bdd.jpg')">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="img/certificado_bdd.jpg" alt="Administrador de Bases de Datos"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <i class="fas fa-expand text-white text-2xl"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 flex-1 flex flex-col">
+                                        <div class="flex items-center gap-3 mb-3">
+                                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                                <i class="fas fa-server text-accent"></i>
+                                            </div>
+                                            <h3 class="text-lg font-semibold">Administrador de Bases de Datos</h3>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex-1">
+                                            Formación en administración básica de bases de datos, instalación y mantenimiento de sistemas de gestión.
+                                        </p>
+                                        <div class="mt-3 text-xs text-gray-500 dark:text-gray-500">
+                                            Julio 2022
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controles del Carrusel -->
+                    <div class="flex justify-center items-center gap-4 mt-8">
+                        <button id="certificates-prev" class="carousel-arrow carousel-arrow-left">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="flex gap-2" id="certificates-indicators">
+                            <!-- Los indicadores se generan dinámicamente con JavaScript -->
+                        </div>
+
+                        <button id="certificates-next" class="carousel-arrow carousel-arrow-right">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Certificados -->
+    <div id="certificateModal" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <div class="certificate-modal-close" onclick="closeCertificateModal()">
+                <i class="fas fa-times"></i>
+            </div>
+            <img id="certificateModalImage" src="" alt="Certificado" class="certificate-modal-image">
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto max-w-4xl">
+            <div class="space-y-12 sm:space-y-16 fade-in">
+                <div class="space-y-4 text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Contacto</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                        ¿Tienes un proyecto en mente o quieres colaborar? ¡Me encantaría saber de ti!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Formulario -->
+                    <div class="card p-6 sm:p-8">
+                        <form id="contactForm" class="space-y-6">
+                            <div class="space-y-2">
+                                <label for="name" class="text-sm font-medium block">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Tu nombre" required
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="email" class="text-sm font-medium block">Email</label>
+                                <input type="email" id="email" name="email" placeholder="tu.email@ejemplo.com" required
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="message" class="text-sm font-medium block">Mensaje</label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Cuéntame sobre tu proyecto..." required
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent/90 transition-colors">
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Info de contacto -->
+                    <div class="space-y-8">
+                        <div class="card p-6 sm:p-8">
+                            <h3 class="text-xl font-semibold mb-4">Conéctate Conmigo</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                                No dudes en contactarme a través de cualquiera de estas plataformas. Siempre estoy
+                                abierta a discutir nuevos proyectos, ideas creativas u oportunidades.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="https://github.com/lcgaibor" target="_blank"
+                                    class="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors bg-transparent">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://linkedin.com/in/lesly-gaibor" target="_blank"
+                                    class="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors bg-transparent">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="mailto:leslygaibor.personal@gmail.com"
+                                    class="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors bg-transparent">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </a>
+                                <a href="https://wa.me/593961803825" target="_blank"
+                                    class="flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors bg-transparent">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card p-6 sm:p-8 bg-accent/5 border-accent/20">
+                            <h3 class="text-xl font-semibold mb-2">Disponible para Trabajar</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Actualmente estoy disponible para proyectos freelance y oportunidades de tiempo
+                                completo. ¡Creemos algo increíble juntos!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center pt-8 border-t border-gray-300 dark:border-gray-600">
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        © 2025 Lesly Gaibor. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">Ingeniera en Tecnologías de la Información</p>
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="mailto:leslygaibor.personal@gmail.com"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="https://github.com/lcgaibor" target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/lesly-gaibor" target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://wa.me/593961803825" target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
