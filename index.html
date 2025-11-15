@@ -435,25 +435,46 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
-        <div class="container mx-auto max-w-6xl">
+    <section id="projects" class="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/10 dark:from-accent/10 dark:via-transparent dark:to-accent/5"></div>
+
+        <div class="container mx-auto max-w-6xl relative z-10">
             <div class="space-y-12 sm:space-y-16 fade-in">
                 <div class="space-y-4 text-center">
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Proyectos Destacados</h2>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-code"></i>
+                        Portafolio de Proyectos
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+                        Proyectos Destacados
+                    </h2>
                     <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                        Una selección de mi trabajo reciente y proyectos personales
+                        Una selección de mi trabajo reciente y proyectos personales que demuestran mis habilidades técnicas
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     <!-- Proyecto 1 -->
-                    <div class="card overflow-hidden group">
-                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                    <div class="card overflow-hidden group hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
                             <img src="img/project2.png" alt="Sistema de Realidad Aumentada"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 z-20">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-800 dark:text-white rounded-full text-xs font-medium">
+                                    <i class="fas fa-vr-cardboard text-accent"></i>
+                                    Realidad Aumentada
+                                </div>
+                            </div>
                         </div>
                         <div class="p-6 space-y-4">
-                            <h3 class="text-xl sm:text-2xl font-semibold">Sistema de Realidad Aumentada</h3>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl sm:text-2xl font-semibold group-hover:text-accent transition-colors">Sistema de Realidad Aumentada</h3>
+                                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                    <i class="fas fa-cubes text-accent"></i>
+                                </div>
+                            </div>
                             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
                                 Diseño de un sistema de RA basado en cubos 3D con relieves como marcadores,
                                 para visualizar la tabla periódica y moléculas simples.
@@ -461,17 +482,17 @@
 
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Unity</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Unity</span>
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">C#</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">C#</span>
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Vuforia</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Vuforia</span>
                             </div>
 
                             <div class="flex gap-3 pt-2">
                                 <a href="https://github.com/ElizaMonik/Modelos-3D-tablaperiodica-blender.git"
                                     target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-accent hover:text-accent transition-colors group-hover:shadow-lg">
                                     <i class="fab fa-github"></i>
                                     Ver Código
                                 </a>
@@ -480,92 +501,151 @@
                     </div>
 
                     <!-- Proyecto 2 -->
-                    <div class="card overflow-hidden group">
-                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                    <div class="card overflow-hidden group hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
                             <img src="img/project1.png" alt="Aplicación Móvil SE Survey"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 z-20">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-800 dark:text-white rounded-full text-xs font-medium">
+                                    <i class="fas fa-mobile-alt text-accent"></i>
+                                    App Móvil
+                                </div>
+                            </div>
                         </div>
                         <div class="p-6 space-y-4">
-                            <h3 class="text-xl sm:text-2xl font-semibold">Aplicación Móvil SE Survey</h3>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl sm:text-2xl font-semibold group-hover:text-accent transition-colors">Aplicación Móvil SE Survey</h3>
+                                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                    <i class="fas fa-clipboard-check text-accent"></i>
+                                </div>
+                            </div>
                             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
                                 Aplicación móvil para realizar encuestas de seguridad ciudadana en Luz de América.
                             </p>
 
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Java</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Java</span>
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Android
-                                    Studio</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Android Studio</span>
                             </div>
 
                             <div class="flex gap-3 pt-2">
                                 <a href="https://github.com/lcgaibor/GecSurvey.git" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
+                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-accent hover:text-accent transition-colors group-hover:shadow-lg">
                                     <i class="fab fa-github"></i>
                                     Ver App
                                 </a>
                                 <a href="https://github.com/lcgaibor/GecSurvey_srv.git" target="_blank"
-                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors">
-                                    <i class="fab fa-github"></i>
+                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-accent hover:text-accent transition-colors group-hover:shadow-lg">
+                                    <i class="fas fa-server"></i>
                                     Backend
                                 </a>
                             </div>
                         </div>
                     </div>
                     <!-- Proyecto Demo 1 -->
-                    <div class="card overflow-hidden group">
-                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
-                            <img src="img/project-demo1.png" alt="Sistema de Gestión Académica"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="card overflow-hidden group hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                            <img src="img/movie-dashboard.png" alt="Movie Dashboard"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 z-20">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-800 dark:text-white rounded-full text-xs font-medium">
+                                    <i class="fas fa-film text-accent"></i>
+                                    Web App
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 z-20">
+                                <div class="inline-flex items-center gap-1 px-2 py-1 bg-green-500/90 text-white rounded-full text-xs font-medium">
+                                    <i class="fas fa-check-circle"></i>
+                                    Completo
+                                </div>
+                            </div>
                         </div>
                         <div class="p-6 space-y-4">
-                            <h3 class="text-xl sm:text-2xl font-semibold">Sistema de Gestión Académica</h3>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl sm:text-2xl font-semibold group-hover:text-accent transition-colors">Movie Dashboard</h3>
+                                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                    <i class="fas fa-video text-accent"></i>
+                                </div>
+                            </div>
                             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                Plataforma web para gestión de cursos, estudiantes y calificaciones con dashboard interactivo.
+                                Dashboard interactivo para descubrir películas con sistema de favoritos, autenticación completa y diseño moderno responsive.
                             </p>
 
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">React</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Next.js 15</span>
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Node.js</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">React 19</span>
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">MongoDB</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">TypeScript</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Supabase</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Tailwind CSS</span>
+                                <span
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Radix UI</span>
                             </div>
 
                             <div class="flex gap-3 pt-2">
-                                <span class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg">
-                                    <i class="fas fa-clock"></i>
-                                    En proceso
-                                </span>
+                                <a href="https://movie-dashboard-one.vercel.app/" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent/90 transition-colors group-hover:shadow-lg">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Demo
+                                </a>
+                                <a href="https://github.com/lcgaibor/movie-dashboard.git" target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:border-accent hover:text-accent transition-colors group-hover:shadow-lg">
+                                    <i class="fab fa-github"></i>
+                                    Ver Código
+                                </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Proyecto Demo 2 -->
-                    <div class="card overflow-hidden group">
-                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                    <div class="card overflow-hidden group hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="relative h-48 sm:h-64 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
                             <img src="img/project-demo2.png" alt="App de Seguimiento de Tareas"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 z-20">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-800 dark:text-white rounded-full text-xs font-medium">
+                                    <i class="fas fa-mobile-alt text-accent"></i>
+                                    App Móvil
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 z-20">
+                                <div class="inline-flex items-center gap-1 px-2 py-1 bg-yellow-500/90 text-white rounded-full text-xs font-medium">
+                                    <i class="fas fa-clock"></i>
+                                    En proceso
+                                </div>
+                            </div>
                         </div>
                         <div class="p-6 space-y-4">
-                            <h3 class="text-xl sm:text-2xl font-semibold">App de Seguimiento de Tareas</h3>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-xl sm:text-2xl font-semibold group-hover:text-accent transition-colors">App de Seguimiento de Tareas</h3>
+                                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                                    <i class="fas fa-tasks text-accent"></i>
+                                </div>
+                            </div>
                             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
                                 Aplicación móvil multiplataforma para gestión de proyectos personales con sincronización en la nube.
                             </p>
 
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">React Native</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">React Native</span>
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">Firebase</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">Firebase</span>
                                 <span
-                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">TypeScript</span>
+                                    class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium hover:bg-accent hover:text-white transition-colors cursor-default">TypeScript</span>
                             </div>
 
                             <div class="flex gap-3 pt-2">
-                                <span class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg">
+                                <span class="inline-flex items-center gap-2 px-4 py-2 border-2 border-yellow-300 dark:border-yellow-600 text-yellow-700 dark:text-yellow-300 text-sm font-medium rounded-lg bg-yellow-50 dark:bg-yellow-900/20">
                                     <i class="fas fa-clock"></i>
                                     En proceso
                                 </span>
